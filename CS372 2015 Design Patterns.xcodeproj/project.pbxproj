@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49957C771ACC9AC700E06773 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49957C751ACC9AC700E06773 /* Expression.cpp */; };
 		49F9E6B51AC36135001E288E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F9E6B41AC36135001E288E /* main.cpp */; };
+		49FE837E1AC602CB00CCFC41 /* Strategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49FE837C1AC602CB00CCFC41 /* Strategy.cpp */; };
+		49FE83811AC6037E00CCFC41 /* Observer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49FE837F1AC6037E00CCFC41 /* Observer.cpp */; };
+		49FE83841AC6038C00CCFC41 /* Subject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49FE83821AC6038C00CCFC41 /* Subject.cpp */; };
+		49FE83871AC9F29900CCFC41 /* Armor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49FE83851AC9F29900CCFC41 /* Armor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +28,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		49957C751ACC9AC700E06773 /* Expression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expression.cpp; sourceTree = "<group>"; };
+		49957C761ACC9AC700E06773 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
 		49F9E6B11AC36135001E288E /* CS372 2015 Design Patterns */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CS372 2015 Design Patterns"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F9E6B41AC36135001E288E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		49FE837C1AC602CB00CCFC41 /* Strategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Strategy.cpp; sourceTree = "<group>"; };
+		49FE837D1AC602CB00CCFC41 /* Strategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strategy.h; sourceTree = "<group>"; };
+		49FE837F1AC6037E00CCFC41 /* Observer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Observer.cpp; sourceTree = "<group>"; };
+		49FE83801AC6037E00CCFC41 /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
+		49FE83821AC6038C00CCFC41 /* Subject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Subject.cpp; sourceTree = "<group>"; };
+		49FE83831AC6038C00CCFC41 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		49FE83851AC9F29900CCFC41 /* Armor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Armor.cpp; sourceTree = "<group>"; };
+		49FE83861AC9F29900CCFC41 /* Armor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Armor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +72,17 @@
 		49F9E6B31AC36135001E288E /* CS372 2015 Design Patterns */ = {
 			isa = PBXGroup;
 			children = (
+				49FE837C1AC602CB00CCFC41 /* Strategy.cpp */,
+				49FE837D1AC602CB00CCFC41 /* Strategy.h */,
 				49F9E6B41AC36135001E288E /* main.cpp */,
+				49957C751ACC9AC700E06773 /* Expression.cpp */,
+				49957C761ACC9AC700E06773 /* Expression.h */,
+				49FE837F1AC6037E00CCFC41 /* Observer.cpp */,
+				49FE83801AC6037E00CCFC41 /* Observer.h */,
+				49FE83821AC6038C00CCFC41 /* Subject.cpp */,
+				49FE83831AC6038C00CCFC41 /* Subject.h */,
+				49FE83851AC9F29900CCFC41 /* Armor.cpp */,
+				49FE83861AC9F29900CCFC41 /* Armor.h */,
 			);
 			path = "CS372 2015 Design Patterns";
 			sourceTree = "<group>";
@@ -118,6 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FE83841AC6038C00CCFC41 /* Subject.cpp in Sources */,
+				49957C771ACC9AC700E06773 /* Expression.cpp in Sources */,
+				49FE837E1AC602CB00CCFC41 /* Strategy.cpp in Sources */,
+				49FE83811AC6037E00CCFC41 /* Observer.cpp in Sources */,
+				49FE83871AC9F29900CCFC41 /* Armor.cpp in Sources */,
 				49F9E6B51AC36135001E288E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +232,7 @@
 		49F9E6B91AC36135001E288E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +240,7 @@
 		49F9E6BA1AC36135001E288E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -232,6 +264,7 @@
 				49F9E6BA1AC36135001E288E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
