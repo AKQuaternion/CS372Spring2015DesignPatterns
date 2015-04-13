@@ -9,11 +9,14 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+using std::cin;
 
 #include <string>
 using std::string;
 #include <memory>
+using std::shared_ptr;
 using std::unique_ptr;
+using std::make_shared;
 using std::make_unique;
 using std::move;
 
@@ -22,6 +25,10 @@ using std::move;
 #include "Observer.h"
 #include "Armor.h"
 #include "Expression.h"
+#include "Composite.h"
+#include "Visitor.h"
+#include "Tree.h"
+#include "Command.h"
 
 void testStrategy()
 {
@@ -72,22 +79,75 @@ void demoDecorator()
 
 void show(const unique_ptr<Expr> &e)
 {
-    cout << e->toString() << " = " << e->evaluate() << endl;
+    Context c;
+    c["x"] = 5.6;
+    cout << e->toString() << " = " << e->evaluate(c) << endl;
+    c["x"] = 10000;
+    cout << e->toString() << " = " << e->evaluate(c) << endl;
 }
 
 int main(int argc, const char * argv[]) {
 
-    unique_ptr<Expr> n1 = make_unique<Number>(5);
-    unique_ptr<Expr> n2 = make_unique<Number>(3);
-    unique_ptr<Expr> n3 = make_unique<Number>(6);
-    unique_ptr<Expr> f1 = make_unique<Factor>(n1);
-    unique_ptr<Expr> f2 = make_unique<Factor>(n2);
-    unique_ptr<Expr> f3 = make_unique<Factor>(n3);
-    unique_ptr<Expr> t1 = make_unique<Term>(f1);
-    unique_ptr<Expr> t2 = make_unique<Term>(f2);
-    unique_ptr<Expr> t3 = make_unique<ProductTerm>(t2,f3);
-    unique_ptr<Expr> e1 = make_unique<Expr>(t1);
-    unique_ptr<Expr> e2 = make_unique<SumExpr>(e1,t3);
+//    unique_ptr<Number> n1 = make_unique<Number>(5);
+//    unique_ptr<Number> n2 = make_unique<Number>(3);
+//    unique_ptr<Number> n3 = make_unique<Number>(6);
+//    unique_ptr<Term> t3 = make_unique<ProductTerm>(move(n2),move(n3));
+//    unique_ptr<Expr> e1 = make_unique<SumExpr>(move(n1),move(t3));
+//
+//    show(e1);
+//    
+//    unique_ptr<Expr> e2 = make_unique<SumExpr> (move(e1),make_unique<Variable>("x"));
+//    
+//    show(e2);
 
-    show(e2);
+//    unique_ptr<Composite> f1 = make_unique<File>("Foo.txt",13);
+//    unique_ptr<Composite> f2 = make_unique<File>("Bar.txt",100);
+//    unique_ptr<Composite> f3 = make_unique<File>("Foo",1000);
+//    unique_ptr<Composite> f4 = make_unique<File>("Bar",10000);
+//    unique_ptr<Folder> folder = make_unique<Folder>("Text Files");
+//    unique_ptr<Folder> folder2 = make_unique<Folder>("All");
+//
+//    folder->add(move(f1));
+//    folder->add(move(f2));
+//    folder2->add(move(folder));
+//    folder2->add(move(f3));
+//    folder2->add(move(f4));
+//    
+//    cout << folder2->name() << " has size " << folder2->size() << endl;
+//    
+//    SizeVisitor sv;
+//    cout << folder2->accept(&sv) << endl;
+//    
+//    PrintVisitor pv;
+//    folder2->accept(&pv);
+
+//Node *root = new FullNode(1,new FullNode(2, new NullNode(),new NullNode()),
+//                            new FullNode(3, new FullNode(4,new NullNode(),new NullNode()),
+//                                            new FullNode(5,new NullNode(),new NullNode())));
+//    
+//cout << root->size() << endl;
+//delete root;
+
+Light l1;
+TV t1;
+SwitchableFan f1;
+
+vector<shared_ptr<Command>> remote;
+
+remote.emplace_back(make_shared<HelloCommand>());
+remote.emplace_back(make_shared<MusicCommand>());
+remote.emplace_back(make_shared<SwitchableCommand>(&l1));
+remote.emplace_back(make_shared<SwitchableCommand>(&t1));
+remote.emplace_back(make_shared<SwitchableCommand>(&f1));
+remote.emplace_back(make_shared<MacroCommand>(std::initializer_list<shared_ptr<Command>>({remote[1],remote[2],remote[3]})));
+remote.emplace_back(make_shared<AnyCommand>(demoDecorator));
+remote.emplace_back(make_shared<AnyCommand>([](){cout << "Goodbye" << endl;}));
+remote.emplace_back(make_shared<QuitCommand>());
+
+while(1) {
+    cout << "Press a button: ";
+    int button;
+    cin >> button;
+    remote[button]->execute();
+    }
 }

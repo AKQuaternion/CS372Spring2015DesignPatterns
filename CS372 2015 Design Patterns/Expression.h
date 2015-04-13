@@ -17,32 +17,29 @@ using std::cout;
 using std::string;
 #include <sstream>
 using std::ostringstream;
+#include <map>
+using Context = std::map<string,double>;
+#include <exception>
 
 // E -> E + T | E - T | T
 // T -> T * F | T / F | F
-// F -> ( E ) | number
-//
+// F -> ( E ) | number | identifier
+
 
 class Expr
 {
 public:
     virtual ~Expr() = default;
-    virtual double evaluate() = 0;
+    virtual double evaluate(const Context &c) = 0;
     virtual string toString() = 0;
 };
 
 class Term : public Expr
 {
-public:
-    virtual ~Term() = default;
 };
 
 class Factor : public Term
 {
-public:
-    virtual ~Factor() = default;
-private:
-    unique_ptr<Term> _t;
 };
 
 class SumExpr : public Expr
@@ -50,9 +47,9 @@ class SumExpr : public Expr
 public:
     SumExpr(unique_ptr<Expr> e, unique_ptr<Term> t):_e(move(e)),_t(move(t))
     {}
-    virtual double evaluate() override
+    virtual double evaluate(const Context &c) override
     {
-        return _e->evaluate() + _t->evaluate();
+        return _e->evaluate(c) + _t->evaluate(c);
     }
     
     virtual string toString() override
@@ -69,9 +66,9 @@ class DifferenceExpr : public Expr
 public:
     DifferenceExpr(unique_ptr<Expr> e, unique_ptr<Term> t):_e(move(e)),_t(move(t))
     {}
-    virtual double evaluate() override
+    virtual double evaluate(const Context &c) override
     {
-        return _e->evaluate() - _t->evaluate();
+        return _e->evaluate(c) - _t->evaluate(c);
     }
     
     virtual string toString() override
@@ -89,9 +86,9 @@ public:
     ProductTerm(unique_ptr<Term> t, unique_ptr<Factor> f):_t(move(t)),_f(move(f))
     {}
     
-    virtual double evaluate() override
+    virtual double evaluate(const Context &c) override
     {
-        return _t->evaluate() * _f->evaluate();
+        return _t->evaluate(c) * _f->evaluate(c);
     }
     
     virtual string toString() override
@@ -109,9 +106,9 @@ public:
     DividendTerm(unique_ptr<Term> t, unique_ptr<Factor> f):_t(move(t)),_f(move(f))
     {}
     
-    virtual double evaluate() override
+    virtual double evaluate(const Context &c) override
     {
-        return _t->evaluate() / _f->evaluate();
+        return _t->evaluate(c) / _f->evaluate(c);
     }
     
     virtual string toString() override
@@ -130,9 +127,9 @@ public:
     ParenthesizedExpr(unique_ptr<Expr> e):_e(move(e))
     {}
     
-    virtual double evaluate() override
+    virtual double evaluate(const Context &c) override
     {
-        return _e->evaluate();
+        return _e->evaluate(c);
     }
     
     virtual string toString() override
@@ -149,7 +146,7 @@ public:
     Number(double d):_d(d)
     {}
     
-    virtual double evaluate() override
+    virtual double evaluate(const Context &c) override
     {
         return _d;
     }
@@ -163,6 +160,32 @@ public:
     
 private:
     double _d;
+};
+
+class Variable : public Factor
+{
+public:
+    Variable(string name):_name(name)
+    {}
+    
+    virtual double evaluate(const Context &c) override
+    {
+        auto location = c.find(_name);
+        if(location != c.end())
+            return location->second;
+        else
+            throw std::runtime_error("Variable class: undefined variable.");
+    }
+    
+    virtual string toString() override
+    {
+        ostringstream output;
+        output << _name;
+        return output.str();
+    }
+    
+private:
+    string _name;
 };
 
 #endif /* defined(__CS372_2015_Design_Patterns__Expression__) */
