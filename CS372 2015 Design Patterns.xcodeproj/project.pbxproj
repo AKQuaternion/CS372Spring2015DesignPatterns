@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490976861AE845CC005EE2C2 /* MP3Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490976841AE845CC005EE2C2 /* MP3Player.cpp */; };
+		490976891AE846FF005EE2C2 /* MP3PlayerState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490976871AE846FF005EE2C2 /* MP3PlayerState.cpp */; };
+		4909768C1AE8481F005EE2C2 /* MP3PlayerStateDerivedClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4909768A1AE8481F005EE2C2 /* MP3PlayerStateDerivedClasses.cpp */; };
+		490EF1A21ACF3EAB000D2126 /* Composite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 490EF1A01ACF3EAB000D2126 /* Composite.cpp */; };
+		49609EEA1AD5D74300C220A8 /* Visitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49609EE81AD5D74300C220A8 /* Visitor.cpp */; };
 		49957C771ACC9AC700E06773 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49957C751ACC9AC700E06773 /* Expression.cpp */; };
 		49F9E6B51AC36135001E288E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F9E6B41AC36135001E288E /* main.cpp */; };
+		49FB257B1AD877A90026D8CF /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49FB25791AD877A90026D8CF /* Tree.cpp */; };
+		49FB25811ADC670C0026D8CF /* Command.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49FB257F1ADC670C0026D8CF /* Command.cpp */; };
 		49FE837E1AC602CB00CCFC41 /* Strategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49FE837C1AC602CB00CCFC41 /* Strategy.cpp */; };
 		49FE83811AC6037E00CCFC41 /* Observer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49FE837F1AC6037E00CCFC41 /* Observer.cpp */; };
 		49FE83841AC6038C00CCFC41 /* Subject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49FE83821AC6038C00CCFC41 /* Subject.cpp */; };
@@ -28,10 +35,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		490976841AE845CC005EE2C2 /* MP3Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MP3Player.cpp; sourceTree = "<group>"; };
+		490976851AE845CC005EE2C2 /* MP3Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP3Player.h; sourceTree = "<group>"; };
+		490976871AE846FF005EE2C2 /* MP3PlayerState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MP3PlayerState.cpp; sourceTree = "<group>"; };
+		490976881AE846FF005EE2C2 /* MP3PlayerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP3PlayerState.h; sourceTree = "<group>"; };
+		4909768A1AE8481F005EE2C2 /* MP3PlayerStateDerivedClasses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MP3PlayerStateDerivedClasses.cpp; sourceTree = "<group>"; };
+		4909768B1AE8481F005EE2C2 /* MP3PlayerStateDerivedClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP3PlayerStateDerivedClasses.h; sourceTree = "<group>"; };
+		490EF1A01ACF3EAB000D2126 /* Composite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Composite.cpp; sourceTree = "<group>"; };
+		490EF1A11ACF3EAB000D2126 /* Composite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Composite.h; sourceTree = "<group>"; };
+		49609EE81AD5D74300C220A8 /* Visitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Visitor.cpp; sourceTree = "<group>"; };
+		49609EE91AD5D74300C220A8 /* Visitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visitor.h; sourceTree = "<group>"; };
 		49957C751ACC9AC700E06773 /* Expression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expression.cpp; sourceTree = "<group>"; };
 		49957C761ACC9AC700E06773 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
 		49F9E6B11AC36135001E288E /* CS372 2015 Design Patterns */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CS372 2015 Design Patterns"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F9E6B41AC36135001E288E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		49FB25791AD877A90026D8CF /* Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tree.cpp; sourceTree = "<group>"; };
+		49FB257A1AD877A90026D8CF /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		49FB257F1ADC670C0026D8CF /* Command.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Command.cpp; sourceTree = "<group>"; };
+		49FB25801ADC670C0026D8CF /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		49FE837C1AC602CB00CCFC41 /* Strategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Strategy.cpp; sourceTree = "<group>"; };
 		49FE837D1AC602CB00CCFC41 /* Strategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strategy.h; sourceTree = "<group>"; };
 		49FE837F1AC6037E00CCFC41 /* Observer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Observer.cpp; sourceTree = "<group>"; };
@@ -83,6 +104,20 @@
 				49FE83831AC6038C00CCFC41 /* Subject.h */,
 				49FE83851AC9F29900CCFC41 /* Armor.cpp */,
 				49FE83861AC9F29900CCFC41 /* Armor.h */,
+				490EF1A01ACF3EAB000D2126 /* Composite.cpp */,
+				49609EE81AD5D74300C220A8 /* Visitor.cpp */,
+				49609EE91AD5D74300C220A8 /* Visitor.h */,
+				490EF1A11ACF3EAB000D2126 /* Composite.h */,
+				49FB25791AD877A90026D8CF /* Tree.cpp */,
+				49FB257A1AD877A90026D8CF /* Tree.h */,
+				49FB257F1ADC670C0026D8CF /* Command.cpp */,
+				49FB25801ADC670C0026D8CF /* Command.h */,
+				490976841AE845CC005EE2C2 /* MP3Player.cpp */,
+				490976851AE845CC005EE2C2 /* MP3Player.h */,
+				490976871AE846FF005EE2C2 /* MP3PlayerState.cpp */,
+				490976881AE846FF005EE2C2 /* MP3PlayerState.h */,
+				4909768A1AE8481F005EE2C2 /* MP3PlayerStateDerivedClasses.cpp */,
+				4909768B1AE8481F005EE2C2 /* MP3PlayerStateDerivedClasses.h */,
 			);
 			path = "CS372 2015 Design Patterns";
 			sourceTree = "<group>";
@@ -143,12 +178,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490976861AE845CC005EE2C2 /* MP3Player.cpp in Sources */,
+				49FB257B1AD877A90026D8CF /* Tree.cpp in Sources */,
 				49FE83841AC6038C00CCFC41 /* Subject.cpp in Sources */,
 				49957C771ACC9AC700E06773 /* Expression.cpp in Sources */,
 				49FE837E1AC602CB00CCFC41 /* Strategy.cpp in Sources */,
+				490976891AE846FF005EE2C2 /* MP3PlayerState.cpp in Sources */,
+				490EF1A21ACF3EAB000D2126 /* Composite.cpp in Sources */,
+				49609EEA1AD5D74300C220A8 /* Visitor.cpp in Sources */,
 				49FE83811AC6037E00CCFC41 /* Observer.cpp in Sources */,
 				49FE83871AC9F29900CCFC41 /* Armor.cpp in Sources */,
 				49F9E6B51AC36135001E288E /* main.cpp in Sources */,
+				49FB25811ADC670C0026D8CF /* Command.cpp in Sources */,
+				4909768C1AE8481F005EE2C2 /* MP3PlayerStateDerivedClasses.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
